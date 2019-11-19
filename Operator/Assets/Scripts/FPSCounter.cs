@@ -10,8 +10,7 @@ public class FPSCounter : MonoBehaviour {
 	}
 
 	private void Update() {
-			label = "FPS :" + (Mathf.Round(1 / Time.unscaledDeltaTime));
-
+		label = "FPS :" + (Mathf.Round(1 / Time.unscaledDeltaTime));
 	}
 
 	void OnGUI() {
