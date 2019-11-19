@@ -6,11 +6,14 @@ public class FPSCounter : MonoBehaviour {
 	string label = "";
 
 	void Start() {
-		GUI.depth = 2;
+		StartCoroutine(Update());
 	}
 
-	private void Update() {
-		label = "FPS :" + (Mathf.Round(1 / Time.unscaledDeltaTime));
+	IEnumerator Update() {
+		while (true) {
+			label = "FPS :" + (Mathf.Round(1 / Time.unscaledDeltaTime));
+			yield return new WaitForSeconds(0.2f);
+		}
 	}
 
 	void OnGUI() {
